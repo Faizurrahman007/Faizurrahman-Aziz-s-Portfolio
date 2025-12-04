@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizurrahman Aziz's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+         
+         html {
+            scroll-behavior: smooth;
+         }
+
+         body {
+            background-color: black;
+         }
+
+         span {
+            color: white;
+         }
+
+         .img-portfolio {
+            margin-right: 0.3rem;
+         }
+
+         li, li * {
+            color: white !important;
+         }
+
+         hr {
+            color: white;
+            margin-top: 4rem;
+         }
+
+         /* Default: centered */
+         .portfolio-photo {
+             display: block;
+             margin: 0 auto;
+             width: 180px;
+         }
+
+         h1 {
+            color: white;
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-family: serif;
+         }
+
+         .small-para {
+            text-align: center;
+            margin-left: 2rem;
+            margin-right: 2rem;
+         }
+
+
+         /* Tablets */
+         @media (min-width: 768px) {
+             .portfolio-photo {
+                 width: 240px;
+             }
+
+             h1 {
+                font-size: 1.7rem;
+             }     
+             
+         }
+
+         @media (max-width: 992px) {
+            .p {
+                display: none;
+            }
+
+            hr {
+               margin-top: 2rem;
+            }
+         }
+
+         @media (min-width: 992px) {
+            .small-para {
+                display: none;
+            }
+         }
+
+        /* Small laptops (992px–1200px) → move right */
+        @media (min-width: 992px) {
+             .portfolio-photo {
+                 margin: 0;
+                 margin-left: auto;
+                 margin-right: 40px;
+                 width: 300px;
+              }
+
+             h1 {
+                margin-top: -35rem;
+                margin-right: 23rem;
+                font-size: 2rem;
+             }
+
+             .p {
+                margin-right: 25rem;
+                text-align: justify;
+                margin-left: 2rem;
+             }
+        }
+
+        /* Fix for 1050px–1200px → increase margin-right */
+        @media (min-width: 1050px) and (max-width: 1200px) {
+             .portfolio-photo {
+                 margin-right: 90px;   /* increased margin for this range */
+             }
+
+             h1 {
+                margin-top: -35rem;
+                margin-right: 25rem;
+                font-size: 2rem;
+             }
+
+             .p {
+                margin-right: 27rem;
+             }
+        }
+
+        /* Large laptops */
+        @media (min-width: 1200px) and (max-width: 1400px) {
+             .portfolio-photo {
+                 margin-right: 120px;
+                 width: 340px;
+              }
+             
+              h1 {
+                margin-top: -39rem;
+                margin-right: 31rem;
+                font-size: 2rem;
+             }
+
+             .p {
+                margin-right: 33rem; 
+                margin-left: 3rem;
+             }
+              
+        }
+
+        /* Med large laptops */
+        @media (min-width: 1400px) and (max-width: 1600px) {
+             .portfolio-photo {
+                 margin-right: 120px;
+                 width: 340px;
+              }
+
+              h1 {
+                margin-top: -38.5rem;
+                margin-right: 31rem;
+                font-size: 2rem;
+             }
+
+             .p {
+                margin-left: 4rem;
+                margin-right: 33rem;
+                font-size: 1.2rem;
+             }
+        }
+
+        /* Very large screens */
+         @media (min-width: 1600px) {
+            .portfolio-photo {
+                margin-right: 150px;
+                width: 380px;
+             }
+
+             h1 {
+                margin-top: -93rem;
+                margin-right: 23rem;
+             }
+
+             .p {
+                margin-left: 4rem;
+                margin-right: 33rem;
+                font-size: 1.2rem;
+             }
+         }
+
+         .skills-section {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-family: serif;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.skill-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #222;
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  background: #1a1a1a;
+  transform: translateY(-5px);
+  border-color: #444;
+}
+
+/* Section */
+.contact-section {
+  width: 100%;
+  background: #000;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container */
+.contact-container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Heading */
+.contact-heading {
+  font-size: 3.5rem;
+  font-family: serif;
+  color: #fff;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* Layout */
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Cards */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+/* On hover */
+.contact-card:hover {
+  background: #141414;
+  border-color: #2e2e2e;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icons */
+.contact-icon {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+/* RESPONSIVE MOBILE TUNING */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 15px 18px;
+    gap: 14px;
+    font-size: 1.15rem;
+  }
+  .icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer {
+  background: #0b0b0b;
+  color: #fff;
+  padding: 60px 20px 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+
+  /* Smooth auto-spacing on all screen sizes */
+  place-items: start;
+}
+
+.footer-title {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-desc {
+  font-size: clamp(13px, 1.5vw, 15px);
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* Section Titles */
+.footer-heading {
+  font-size: clamp(16px, 2vw, 20px);
+  margin-bottom: 15px;
+}
+
+/* Link styling */
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-block ul li {
+  margin-bottom: 10px;
+}
+
+.footer-block ul li a {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-block ul li a:hover {
+  color: #fff;
+  padding-left: 6px;
+}
+
+/* Bottom text */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #1c1c1c;
+  font-size: clamp(12px, 1.3vw, 14px);
+  opacity: 0.7;
+}
+
+/* Extra responsiveness for ultra-small phones */
+@media (max-width: 400px) {
+  .footer {
+    padding: 40px 15px 20px;
+  }
+
+  .footer-wrapper {
+    gap: 35px;
+  }
+
+  .footer-block ul li a:hover {
+    padding-left: 0;
+  }
+}
+
+
+
+
+</style>
+</head>
+<body>
+   <div id="home">
+      <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <img class="img-portfolio" src="./Portfolio image svg.png" height="30"> <span class="fs-4">Faizurrahman Aziz's Portfolio</span> </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#skill" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#footer" class="nav-link">About</a></li>
+            </ul>
+           
+        </header>
+    </div>
+
+    <div class="container"> 
+        <img class="portfolio-photo" src="./My profile.png">
+           <h1>Faizurrahman Aziz</h1>
+        <p class="p" style="color: white; line-height: 1.7;">
+            I am a 16-year-old <span style="color:#4F9EFF;">developer</span> driven by a deep interest in building
+            <span style="color:#FFCE5C;">intelligent</span>,
+            <span style="color:#4F9EFF;">modern</span>, and
+            <span style="color:#FFCE5C;">high-performance</span> digital experiences. My work focuses on creating products that
+            combine
+            <span style="color:#4F9EFF;">clean design</span>,
+            <span style="color:#FFCE5C;">purposeful functionality</span>, and
+            strong technical foundations.
+        
+            I aim to become a highly capable
+            <span style="color:#4F9EFF;">full-stack developer</span> and
+            <span style="color:#FFCE5C;">AI architect</span> with the ability to build
+            <span style="color:#4F9EFF;">scalable platforms</span>, automate
+            <span style="color:#FFCE5C;">complex workflows</span>, and design systems that elevate how people interact with
+            technology.
+        
+            I thrive on solving
+            <span style="color:#4F9EFF;">challenging problems</span>, optimizing
+            <span style="color:#FFCE5C;">user experience</span>, and crafting smooth, intuitive interactions. I pay close
+            attention to
+            <span style="color:#4F9EFF;">structure</span>,
+            <span style="color:#FFCE5C;">visual hierarchy</span>, and the small details that create a polished, professional
+            product.
+        
+            Beyond development, I focus on
+            <span style="color:#4F9EFF;">discipline</span>,
+            <span style="color:#FFCE5C;">long-term thinking</span>, and personal growth. I study how technology creates
+            opportunity and how young builders can create
+            <span style="color:#4F9EFF;">massive impact</span> through skill and consistency.
+        
+            Every project I create is part of my journey toward
+            <span style="color:#FFCE5C;">mastery</span>,
+            <span style="color:#4F9EFF;">independence</span>, and building products that truly
+            <span style="color:#FFCE5C;">matter</span>.
+        </p>
+
+        <p class="small-para" style="color: white; line-height: 1.6;">
+            I am a 16-year-old <span style="color:#4F9EFF;">developer</span> focused on building
+            <span style="color:#FFCE5C;">modern</span>,
+            <span style="color:#4F9EFF;">intelligent</span> digital experiences.
+            I enjoy solving <span style="color:#FFCE5C;">complex problems</span>, creating
+            <span style="color:#4F9EFF;">smooth interfaces</span>, and designing systems with real impact.
+            My goal is to grow into a strong <span style="color:#FFCE5C;">full-stack developer</span> and
+            <span style="color:#4F9EFF;">AI architect</span> while building products that truly
+            <span style="color:#FFCE5C;">matter</span>.
+        </p>
+   </div>
+</div>
+<hr />
+<div id="skill">
+ <section class="skills-section">
+   <h2 class="skills-title">Skills</h2>
+
+   <div class="skills-grid">
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3</div>
+      <div class="skill-card">Responsive Design</div>
+      <div class="skill-card">UI/UX Design Principles</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">Express.js</div>
+      <div class="skill-card">REST APIs</div>
+      <div class="skill-card">MongoDB</div>
+      <div class="skill-card">MySQL</div>
+      <div class="skill-card">Git & GitHub</div>
+      <div class="skill-card">Figma</div>
+   </div>
+ </section>
+</div>
+
+<hr />
+  
+<div id="contact">
+      <section class="contact-section">
+         <div class="contact-container">
+            <h2 class="contact-heading">Contact</h2>
+      
+            <div class="contact-items">
+      
+               <a href="https://instagram.com/faizurrahmanazizz" target="_blank" class="contact-card">
+                  <div class="icon-wrapper">
+                     <svg viewBox="0 0 24 24" class="contact-icon">
+                        <path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 
+                  2.757 2.243 5 5 5h10c2.757 0 5-2.243 
+                  5-5V7c0-2.757-2.243-5-5-5H7zm10 
+                  2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 
+                  3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 
+                  1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 
+                  000-10zm0 2a3 3 0 110 6 3 3 0 
+                  010-6zm4.5-.25a1.25 1.25 0 
+                  11-2.5 0 1.25 1.25 0 012.5 0z" />
+                     </svg>
+                  </div>
+                  <span>@faizurrahmanazizz</span>
+               </a>
+      
+               <a href="https://wa.me/7355921563" target="_blank" class="contact-card">
+                  <div class="icon-wrapper">
+                     <svg viewBox="0 0 24 24" class="contact-icon">
+                        <path fill="currentColor" d="M12.04 2C6.59 2 2.23 6.36 2.23 
+                  11.81c0 2.08.62 4.05 1.79 5.75L2 22l4.58-1.96a9.78 
+                  9.78 0 005.46 1.66h.01c5.45 0 9.81-4.36 
+                  9.81-9.81C21.85 6.36 17.49 2 12.04 
+                  2zm5.63 14.12c-.24.68-1.37 1.31-1.9 
+                  1.4-.49.09-1.11.13-1.79-.11-.41-.14-.94-.3-1.62-.59-2.85-1.23-4.7-4.07-4.85-4.26-.14-.19-1.16-1.54-1.16-2.94 
+                  0-1.4.73-2.09 1-2.38.27-.29.59-.36.79-.36h.57c.19 
+                  0 .43-.07.67.51.24.58.82 2 
+                  .89 2.15.07.14.12.3.02.49-.1.19-.15.3-.29.47-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.14.29.62 
+                  1.02 1.33 1.66.91.81 1.68 1.07 1.97 
+                  1.21.29.14.46.12.63-.07.17-.19.72-.84.91-1.12.19-.29.39-.24.65-.14.27.1 
+                  1.7.8 1.99.94.29.14.48.21.55.33.07.12.07.71-.17 
+                  1.39z" />
+                     </svg>
+                  </div>
+                  <span>+91 7355921563</span>
+               </a>
+      
+            </div>
+         </div>
+      </section>
+
+</div>
+
+<hr />
+
+<div id="footer">
+      <footer class="footer">
+         <div class="footer-wrapper">
+      
+            <div class="footer-block">
+               <h2 class="footer-title">Faizurrahman Aziz</h2>
+               <p class="footer-desc">
+                  Crafting digital experiences with precision and creativity.
+               </p>
+            </div>
+      
+            <div class="footer-block">
+               <h3 class="footer-heading">Links</h3>
+               <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#skills">Skills</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#contact">Contact</a></li>
+               </ul>
+            </div>
+      
+            <div class="footer-block">
+               <h3 class="footer-heading">Social</h3>
+               <ul>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">GitHub</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+               </ul>
+            </div>
+      
+         </div>
+      
+         <div class="footer-bottom">
+            © 2025 Faizurrahman Aziz. All Rights Reserved.
+         </div>
+      </footer>
+
+</div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
